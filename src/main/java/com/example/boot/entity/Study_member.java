@@ -15,20 +15,24 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-public class Study_record {
+public class Study_member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int key_id;
+    @Column(name = "member_id")
+    private int memberId;
 
-    private String study_day;
+    @Column(name = "login_id")
+    private String loginId;
 
-    private String contents;
+    private String password;
+
+    private String name;
+
+    private String role;
 
     @org.hibernate.annotations.Generated(GenerationTime.ALWAYS)
     @Column(name="reg_day", updatable = false)
     private LocalDateTime reg_day;
 
-    @org.hibernate.annotations.Generated(GenerationTime.ALWAYS)
-    @Column(name="mod_day")
-    private LocalDateTime mod_day;
+    private String email;
 }
